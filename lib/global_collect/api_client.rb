@@ -32,15 +32,14 @@ module GlobalCollect
           :timeout  => DEFAULT_TIMEOUT
         )
       end
-      
+
       unless response
         error_message = "Request [#{request.action} v#{request.version}] => [#{@service_url}] failed! No response!"
         GlobalCollect.wire_logger.error(error_message)
         raise error_message
       end
       GlobalCollect.wire_logger.info("RESP [#{request.action} v#{request.version}] => #{response.code} - #{request_time} s - body:\n#{response.body}")
-      
-      base = GlobalCollect::Responses::Base.new(response.delegate, response.body)
+      base = GlobalCollect::Responses::Base.new(response.parsed_response, response.body)
       raise "Malformed response to #{request.action} request! Body: '#{response.body}'" if base.malformed?
       request.suggested_response_mixins.each{|m| base.extend(m) } if add_mixins
       base
