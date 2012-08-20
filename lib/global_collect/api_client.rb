@@ -11,7 +11,7 @@ module GlobalCollect
     # Net::HTTP warns that debug_output should not be set in production
     # because it is a security problem.
     http_proxy = ENV["PROXIMO_URL"], 80 if ENV["PROXIMO_URL"]
-    debug_output(nil)
+    debug_output $stdout
     
     
     attr_reader :service, :environment, :authentication
