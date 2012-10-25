@@ -10,7 +10,11 @@ module GlobalCollect
     DEFAULT_TIMEOUT = 70
     # Net::HTTP warns that debug_output should not be set in production
     # because it is a security problem.
-    debug_output(nil)
+    if ENV["PROXIMO_URL"]
+      proxy = URI.parse(ENV["PROXIMO_URL"].to_s)
+      http_proxy proxy.host, 80, proxy.user, proxy.password
+    end
+    debug_output $stdout
     
     
     attr_reader :service, :environment, :authentication
