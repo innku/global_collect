@@ -14,7 +14,7 @@ module GlobalCollect::RequestModels
       @attributes = {}
       attributes.each {|k,v| self[k] = v }
     end
-    
+
     def validate
       fields.each do |field, validations|
         validator = GlobalCollect::FieldValidator.new(*validations)
@@ -24,12 +24,12 @@ module GlobalCollect::RequestModels
       end
       return @errors.blank?
     end
-    
+
     def [](key)
       raise ArgumentError.new("Invalid attribute name '#{key}'!") unless fields.key?(key)
       @attributes[key]
     end
-    
+
     def []=(key, value)
       raise ArgumentError.new("Invalid attribute name '#{key}'!") unless fields.key?(key)
       @attributes[key] = value
