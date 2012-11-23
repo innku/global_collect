@@ -18,7 +18,7 @@ module GlobalCollect::Builders::InsertOrderWithPayment
         AMOUNTSIGN
         CURRENCYCODE
         LANGUAGECODE
-        COUNTRYCODE        
+        COUNTRYCODE
         OVERWRITEPAYMENTREFERNCE
         IPADDRESSCUSTOMER
         CUSTOMERID
@@ -68,6 +68,9 @@ module GlobalCollect::Builders::InsertOrderWithPayment
         STARTDATE
         ENDDATE
         NUMBEROFPAYMENTS
+        NUMBEROFINSTALLMENTS
+        PURCHASETYPE
+        USAGETYPE
         STEPWEEK
         STEPMONTH
       ]

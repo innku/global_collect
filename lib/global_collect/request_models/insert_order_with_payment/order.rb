@@ -41,7 +41,7 @@ module GlobalCollect::RequestModels::InsertOrderWithPayment
         "RESELLERID"                     => ["N10"   , "O"],
         "EMAIL"                          => ["AN70"  , "O"],
         "EMAILTYPEINDICATOR"             => ["N1"    , "O"],
-        "COMPANYNAME"                    => ["AN40"  , "O"],
+        "COMPANYNAME"                    => ["AN50"  , "O"],
         "COMPANYDATA"                    => ["AN40"  , "O"],
         "SEX"                            => ["AN1"   , "O"],
         "VATNUMBER"                      => ["AN17"  , "O"],
@@ -60,6 +60,9 @@ module GlobalCollect::RequestModels::InsertOrderWithPayment
         "STARTDATE"                      => ["N14"   , "O"],
         "ENDDATE"                        => ["N14"   , "O"],
         "NUMBEROFPAYMENTS"               => ["N5"    , "O"],
+        "NUMBEROFINSTALLMENTS"           => ["N5"    , "O"],
+        "PURCHASETYPE"                   => ["N1"    , "O"],
+        "USAGETYPE"                      => ["N1"    , "O"],
         "STEPWEEK"                       => ["N5"    , "O"],
         "STEPMONTH"                      => ["N5"    , "O"]
       })
